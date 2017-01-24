@@ -39,7 +39,7 @@
         "vnetName": "myIPv4VNet",
         "ipv4PrivateIPAddressType": "Dynamic",
         "ipv6PrivateIPAddressType": "Dynamic",
-        "numberOfInstances": 2,
+        "numberOfInstances": 1,
 
         "ipv6PublicIPAddressName": "myIPv6PublicIP",
         "ipv4PublicIPAddressName": "myIPv4PublicIP",
@@ -213,19 +213,7 @@
                                 "id": "[variables('ipv4FrontEndIPConfigID')]"
                             },
                             "protocol": "tcp",
-                            "frontendPort": 50001,
-                            "backendPort": 3389,
-                            "enableFloatingIP": false
-                        }
-                    },
-                    {
-                        "name": "RDP-VM1",
-                        "properties": {
-                            "frontendIPConfiguration": {
-                                "id": "[variables('ipv4FrontEndIPConfigID')]"
-                            },
-                            "protocol": "tcp",
-                            "frontendPort": 50002,
+                            "frontendPort": 3389,
                             "backendPort": 3389,
                             "enableFloatingIP": false
                         }
@@ -262,7 +250,7 @@
                             },
                             "protocol": "Tcp",
                             "frontendPort": 80,
-                            "backendPort": 8080,
+                            "backendPort": 80,
                             "probe": {
                                 "id": "[variables('ipv4ipv6lbProbeID')]"
                             }
